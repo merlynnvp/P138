@@ -1,3 +1,4 @@
+GameStatus = "";
 
 /*created by prashant shukla */
 
@@ -136,15 +137,23 @@ if(pcscore ==4){
     noLoop();
     pcscore = 0;
 }
-   if(ball.y+ball.r > height || ball.y-ball.r <0){
+   if(ball.y+ball.r > height || ball.y-ball.r <0)
+   {
        ball.dy =- ball.dy;
    }   
 }
 
-function preload() {
+function preload()
+{
 	world_start = loadSound("world_start.wav");
 	setSprites();
 	MarioAnimation();
+}
+
+function  startGame()
+{
+  GameStatus = "start";
+  document.getElementById("status").innerHTML = "Game is loading";
 }
 
 function setup() {
